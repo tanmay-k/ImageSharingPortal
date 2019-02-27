@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../css/main.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+		<script src="../scripts/createUserSite.js"></script>
+
+		<title>Temp Archive</title>
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<img-share-portal></img-share-portal>
+
+			<div class="row">
+				<div class="col-sm-3">
+					<!--render DP and user name here-->
+				</div>
+				<div class="col-sm-6">
+					<label for="new-post">
+						<button type="" id="postPhotos" class="btn btn-primary float-right" onclick="document.getElementById('new-post').click()">New Post</button>
+					</label>
+					<input type="file" style="visibility:hidden" name="post-images" id="new-post" accept="image/*">
+					<button type="button" id="postPhotos" class="btn btn-primary float-right" onclick="alert('You clicked post button!')">Share</button>
+					<button type="button" id="postPhotos" class="btn btn-primary float-right" onclick="alert('You clicked post button!')">Delete</button>
+				</div>
+				<div class="col-sm-3">
+
+				</div>
+			</div>
+		</div>
+
+		<script type="module" src="../modules/navbar.js"></script>
+	</body>
+</html>

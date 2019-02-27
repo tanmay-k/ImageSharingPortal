@@ -32,6 +32,7 @@ class NavbarElement extends HTMLElement {
 			<ul class="navbar-nav">
 				${renderNavLink('/','Home')}
 				${renderNavLink('/profile.html','Profile')}
+				${renderNavLink('/userSite/home.html','Avbcd')}
 			</ul>
 		</nav>
 
