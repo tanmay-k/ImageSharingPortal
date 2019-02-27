@@ -26,16 +26,51 @@
 					<label for="new-post">
 						<button type="" id="postPhotos" class="btn btn-primary float-right" onclick="document.getElementById('new-post').click()">New Post</button>
 					</label>
-					<input type="file" style="visibility:hidden" name="post-images" id="new-post" accept="image/*">
-					<button type="button" id="postPhotos" class="btn btn-primary float-right" onclick="alert('You clicked post button!')">Share</button>
-					<button type="button" id="postPhotos" class="btn btn-primary float-right" onclick="alert('You clicked post button!')">Delete</button>
+					<input type="file" style="visibility:hidden" name="post-images" id="new-post" accept="image/*" onchange="uploadImages(this.files)">
+					<button type="button" id="sharePhotos" class="btn btn-primary float-right" onclick="alert('You clicked post button!')">Share</button>
+					<button type="button" id="deletePhotos" class="btn btn-primary float-right" onclick="alert('You clicked post button!')">Delete</button>
 				</div>
 				<div class="col-sm-3">
 
+				</div>
+
+				<div class="row">
+					<div class="col-sm-3">
+
+					</div>
+					<div class="col-sm-6">
+						<img src="" alt="Upload Immage" id="img-image">
+					</div>
+					<div class="col-sm-3">
+
+					</div>
 				</div>
 			</div>
 		</div>
 
 		<script type="module" src="../modules/navbar.js"></script>
+
+		<script type="text/javascript">
+			function uploadImages(files)	{
+				var img = document.getElementById('img-image')
+				//console.log(img);
+				var reader = new FileReader()
+
+				reader.onload = function()	{
+					var dataURL = reader.result;
+					//Separate method to render modal using data URL
+
+					img.src=dataURL;
+				}
+				reader.readAsDataURL(files[0]);
+				//var extension = files[0].name.split(".")
+				//var blob = new Blob(buf,'image/'+extension);
+
+				//console.log(img);
+
+				console.log(img.name);
+				confirmChanges(img.src,img.name);
+			}
+		</script>
 	</body>
 </html>
